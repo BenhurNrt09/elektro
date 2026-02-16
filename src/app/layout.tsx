@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="tr">
       <head>
         {/* Favicon */}
-        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="/esapp_logo.png" />
 
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
