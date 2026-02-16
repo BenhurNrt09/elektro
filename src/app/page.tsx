@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import SocialSlider from '@/components/SocialSlider';
 
 export default function Home() {
 
@@ -466,9 +467,30 @@ export default function Home() {
 
           <div className="row">
             {[
-              { icon: 1, name: 'Temel Plan', tag: 'Bireysel ve başlangıç için', price: '₺199' },
-              { icon: 2, name: 'Pro Plan', tag: 'Profesyoneller için', price: '₺499' },
-              { icon: 3, name: 'Kurumsal Plan', tag: 'Ekipler ve şirketler için', price: '₺999' }
+              {
+                icon: 1,
+                name: 'Temel Plan',
+                tag: 'Bireysel ve başlangıç için',
+                price: '₺199',
+                benefit: '30 gün ücretsiz deneme',
+                benefitIcon: 'fa-regular fa-calendar-check'
+              },
+              {
+                icon: 2,
+                name: 'Pro Plan',
+                tag: 'Profesyoneller için',
+                price: '₺499',
+                benefit: 'Gizli ücret yok kurulum ücreti yok',
+                benefitIcon: 'fa-solid fa-wallet'
+              },
+              {
+                icon: 3,
+                name: 'Kurumsal Plan',
+                tag: 'Ekipler ve şirketler için',
+                price: '₺999',
+                benefit: 'İstediğiniz zaman iptal edin',
+                benefitIcon: 'fa-regular fa-circle-xmark'
+              }
             ].map((plan, i) => (
               <div className="col-lg-4 col-md-6" key={i}>
                 <div className="pricing-item wow fadeInUp" data-wow-delay={`${0.2 * (i + 1)}s`}>
@@ -502,62 +524,24 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+                {/* Benefit under the box */}
+                <div className="pricing-footer-item mt-4 wow fadeInUp" data-wow-delay={`${0.3 * (i + 1)}s`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                  <div className="icon-box" style={{ color: 'var(--primary-color)', fontSize: '24px' }}>
+                    <i className={plan.benefitIcon}></i>
+                  </div>
+                  <div className="pricing-footer-content">
+                    <p style={{ margin: 0, fontWeight: 500 }}>{plan.benefit}</p>
+                  </div>
+                </div>
               </div>
             ))}
-          </div>
-
-          <div className="pricing-footer-box wow fadeInUp" data-wow-delay="0.6s">
-            <div className="pricing-footer-item">
-              <div className="icon-box">
-                <img src="images/icon-pricing-benefit-1.svg" alt="" />
-              </div>
-              <div className="pricing-footer-content">
-                <p>30 gün ücretsiz deneme</p>
-              </div>
-            </div>
-            <div className="pricing-footer-item">
-              <div className="icon-box">
-                <img src="images/icon-pricing-benefit-2.svg" alt="" />
-              </div>
-              <div className="pricing-footer-content">
-                <p>Gizli ücret yok kurulum ücreti yok</p>
-              </div>
-            </div>
-            <div className="pricing-footer-item">
-              <div className="icon-box">
-                <img src="images/icon-pricing-benefit-3.svg" alt="" />
-              </div>
-              <div className="pricing-footer-content">
-                <p>İstediğiniz zaman iptal edin</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       {/* Our Pricing Section End */}
 
       {/* Social App Slider Section Start */}
-      <div className="our-social-apps">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="social-app-slider">
-                <div className="swiper">
-                  <div className="swiper-wrapper">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4].map((n, i) => (
-                      <div className="swiper-slide" key={i}>
-                        <div className="social-app-item">
-                          <img src={`images/icon-social-app-${n}.svg`} alt="" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <SocialSlider />
       {/* Social App Slider Section End */}
 
       {/* Our Interface Section Start */}
@@ -602,126 +586,102 @@ export default function Home() {
       <div className="our-testimonial bg-section">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
-              <div className="testimonial-image-box">
+            {/* Left Column: Title & Image (Dark Green Card) */}
+            <div className="col-lg-5">
+              <div className="testimonial-image-box" style={{ backgroundColor: '#005B52', padding: '40px', borderRadius: '20px', height: '100%', color: '#fff' }}>
                 <div className="section-title">
-                  <h3 className="wow fadeInUp">Referanslar</h3>
-                  <h2 className="text-anime-style-3" data-cursor="-opaque">Memnun kullanıcılarımızın hakkımızda söyledikleri</h2>
-                  <p className="wow fadeInUp" data-wow-delay="0.2s">Uygulamanın dünya çapındaki kullanıcılar için nasıl bir fark yarattığını keşfedin - gerçek hikayeler, gerçek sonuçlar.</p>
+                  <h3 className="wow fadeInUp" style={{ color: '#FF9F43' }}>Referanslar</h3>
+                  <h2 className="text-anime-style-3 text-white" data-cursor="-opaque" style={{ color: '#fff' }}>Memnun kullanıcılarımızın hakkımızda söyledikleri</h2>
+                  <p className="wow fadeInUp text-white" data-wow-delay="0.2s" style={{ color: 'rgba(255,255,255,0.8)' }}>Uygulamanın dünya çapındaki kullanıcılar için nasıl bir fark yarattığını keşfedin - gerçek hikayeler, gerçek sonuçlar.</p>
                 </div>
 
-                <div className="testimonial-image">
+                <div className="testimonial-image mt-4">
                   <figure className="image-anime">
-                    <img src="images/testimonial-image.png" alt="" />
+                    <img src="images/testimonial-image.png" alt="" style={{ borderRadius: '15px' }} />
                   </figure>
                 </div>
               </div>
             </div>
 
-            <div className="col-lg-6">
-              <div className="testimonial-content-box">
-                <div className="testimonial-rating-box">
-                  <div className="testimonial-rating-image">
-                    <div className="testimonial-rating-star">
-                      <i className="fa fa-solid fa-star"></i>
-                      <i className="fa fa-solid fa-star"></i>
-                      <i className="fa fa-solid fa-star"></i>
-                      <i className="fa fa-solid fa-star"></i>
-                      <i className="fa fa-solid fa-star"></i>
+            {/* Right Column: Stats & Slider */}
+            <div className="col-lg-7">
+              <div className="row mb-4">
+                {/* Stats Box 1: Rating */}
+                <div className="col-md-6 mb-4 mb-md-0">
+                  <div className="testimonial-rating-box" style={{ backgroundColor: '#fff', padding: '30px', borderRadius: '20px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', textAlign: 'center', height: '100%' }}>
+                    <div className="testimonial-rating-star" style={{ color: '#FF9F43', marginBottom: '10px' }}>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
                     </div>
-                    <div className="testimonial-rating-counter">
-                      <h2><span className="counter">4.8</span></h2>
-                      <p>Kullanıcı Puanı</p>
-                    </div>
-                    <div className="testimonial-rating-logo">
-                      <img src="images/google-logo.svg" alt="" />
-                    </div>
-                  </div>
-
-                  <div className="testimonial-client-box wow fadeInUp" data-wow-delay="0.2s">
-                    <div className="satisfy-client-images">
-                      {[1, 2, 3, 4].map(i => (
-                        <div className="satisfy-client-image" key={i}>
-                          <figure className="image-anime">
-                            <img src={`images/author-${i}.jpg`} alt="" />
-                          </figure>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="testimonial-rating-content">
-                      <h2><span className="counter">1.5</span>m</h2>
-                      <p>Bu Uygulamayı Yükleyenler</p>
-                    </div>
-                    <div className="testimonial-social-icons">
-                      <ul>
-                        <li><a href="#"><i className="fa-brands fa-google-play"></i></a></li>
-                        <li><a href="#"><i className="fa-brands fa-app-store-ios"></i></a></li>
-                      </ul>
+                    <h2 style={{ fontSize: '3rem', fontWeight: 700, margin: 0 }}>4.8</h2>
+                    <p style={{ color: '#666' }}>Kullanıcı Puanı</p>
+                    <div className="google-logo mt-3">
+                      <img src="images/google-logo.svg" alt="" style={{ height: '30px' }} />
                     </div>
                   </div>
                 </div>
 
-                <div className="testimonial-slider">
-                  <div className="swiper">
-                    <div className="swiper-wrapper" data-cursor-text="Sürükle">
-                      {[1, 2].map((n, i) => (
-                        <div className="swiper-slide" key={i}>
-                          <div className="testimonial-item">
-                            <div className="testimonial-item-header">
-                              <div className="testimonial-item-rating">
-                                <i className="fa fa-solid fa-star"></i>
-                                <i className="fa fa-solid fa-star"></i>
-                                <i className="fa fa-solid fa-star"></i>
-                                <i className="fa fa-solid fa-star"></i>
-                                <i className="fa fa-solid fa-star"></i>
-                              </div>
-                              <div className="testimonial-item-content">
-                                <h3>"Dünya standartlarında destek, kullanıcı dostu uygulama."</h3>
-                                <p>"[Uygulama Adı] hakkında en iyi şey, başlamanın ne kadar kolay olduğu. Dakikalar içinde ihtiyacım olan tüm özelliklerle çalışmaya başladım. Desteğe iki kez ulaştım ve her iki seferde de yanıt anında ve yardımcı oldu. Ekip gerçekten geri bildirimleri dinliyor ve güncellemeler yayınlıyor."</p>
-                              </div>
-                            </div>
-                            <div className="testimonial-item-author">
-                              <div className="testimonial-author-image">
-                                <figure className="image-anime">
-                                  <img src="images/author-3.jpg" alt="" />
-                                </figure>
-                              </div>
-                              <div className="testimonial-author-content">
-                                <h3>Gizem Y.</h3>
-                                <p>Dijital Pazarlamacı</p>
-                              </div>
-                            </div>
-                          </div>
+                {/* Stats Box 2: Downloads */}
+                <div className="col-md-6">
+                  <div className="testimonial-rating-box" style={{ backgroundColor: '#fff', padding: '30px', borderRadius: '20px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', textAlign: 'center', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                    <div className="satisfy-client-images mb-3" style={{ display: 'flex', justifyContent: 'center' }}>
+                      {[1, 2, 3, 4].map(i => (
+                        <div key={i} style={{ width: '40px', height: '40px', borderRadius: '50%', overflow: 'hidden', border: '2px solid #fff', marginLeft: i > 1 ? '-15px' : 0 }}>
+                          <img src={`images/author-${i}.jpg`} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                       ))}
                     </div>
-                    <div className="testimonial-btn">
-                      <div className="testimonial-button-prev"></div>
-                      <div className="testimonial-button-next"></div>
+                    <h2 style={{ fontSize: '3rem', fontWeight: 700, margin: 0 }}>1.5m</h2>
+                    <p style={{ color: '#666' }}>Bu Uygulamayı Yükleyenler</p>
+                    <div className="store-icons mt-3" style={{ display: 'flex', gap: '10px' }}>
+                      <a href="#" style={{ color: '#333', fontSize: '24px' }}><i className="fa-brands fa-google-play"></i></a>
+                      <a href="#" style={{ color: '#333', fontSize: '24px' }}><i className="fa-brands fa-app-store-ios"></i></a>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-lg-12">
-              <div className="company-supports-slider-box">
-                <div className="company-supports-content wow fadeInUp" data-wow-delay="0.2s">
-                  <hr />
-                  <p><span>550+</span> Uygulamamızı Kullanan Şirket</p>
-                  <hr />
-                </div>
-
-                <div className="company-supports-slider">
-                  <div className="swiper">
-                    <div className="swiper-wrapper">
-                      {[1, 2, 3, 4, 5, 1, 3].map((n, i) => (
-                        <div className="swiper-slide" key={i}>
-                          <div className="company-supports-logo">
-                            <img src={`images/company-supports-logo-${n}.svg`} alt="" />
-                          </div>
+              {/* Slider Row */}
+              <div className="row">
+                <div className="col-12">
+                  <div className="testimonial-slider-box" style={{ backgroundColor: '#fff', padding: '40px', borderRadius: '20px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+                    <div className="testimonial-slider">
+                      <div className="swiper">
+                        <div className="swiper-wrapper">
+                          {[1, 2].map((n, i) => (
+                            <div className="swiper-slide" key={i}>
+                              <div className="testimonial-item">
+                                <div className="testimonial-item-header mb-3">
+                                  <div className="testimonial-item-rating" style={{ color: '#FF9F43' }}>
+                                    <i className="fa-solid fa-star"></i>
+                                    <i className="fa-solid fa-star"></i>
+                                    <i className="fa-solid fa-star"></i>
+                                    <i className="fa-solid fa-star"></i>
+                                    <i className="fa-solid fa-star"></i>
+                                  </div>
+                                </div>
+                                <div className="testimonial-item-content">
+                                  <h3 style={{ fontSize: '1.2rem', marginBottom: '15px', fontWeight: 600 }}>"Dünya standartlarında destek, kullanıcı dostu uygulama."</h3>
+                                  <p style={{ fontStyle: 'italic', color: '#555' }}>"[Uygulama Adı] hakkında en iyi şey, başlamanın ne kadar kolay olduğu. Dakikalar içinde ihtiyacım olan tüm özelliklerle çalışmaya başladım. Desteğe iki kez ulaştım ve her iki seferde de yanıt anında ve yardımcı oldu."</p>
+                                </div>
+                                <div className="testimonial-item-author mt-4 d-flex align-items-center">
+                                  <div className="testimonial-author-image" style={{ width: '50px', height: '50px', borderRadius: '50%', overflow: 'hidden', marginRight: '15px' }}>
+                                    <img src="images/author-3.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                  </div>
+                                  <div className="testimonial-author-content">
+                                    <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 700 }}>Gizem Y.</h3>
+                                    <p style={{ margin: 0, fontSize: '0.9rem', color: '#777' }}>Dijital Pazarlamacı</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                        {/* Navigation Buttons could go here if needed, but styling allows drag */}
+                      </div>
                     </div>
                   </div>
                 </div>
