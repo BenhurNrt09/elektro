@@ -22,7 +22,7 @@ export default function Home() {
             <div className="container">
               {/* Logo Start */}
               <a className="navbar-brand" href="/">
-                <img src="/esapp_logo.png" alt="ESAPP Logo" style={{ maxHeight: '50px', width: 'auto' }} />
+                <img src="/esapplogo.png" alt="ESAPP Logo" style={{ maxHeight: '50px', width: 'auto' }} />
               </a>
               {/* Logo End */}
 
@@ -761,7 +761,7 @@ export default function Home() {
             <div className="col-lg-4">
               <div className="about-footer">
                 <div className="footer-logo">
-                  <img src="/esapp_logo.png" alt="ESAPP Logo" style={{ maxHeight: '60px', width: 'auto' }} />
+                  <img src="/esapplogo.png" alt="ESAPP Logo" style={{ maxHeight: '60px', width: 'auto' }} />
                 </div>
                 <div className="about-footer-content">
                   <p>Günlük yaşamı daha akıllı, daha basit hale getirmek için tasarlanmış yenilikçi, kullanıcı dostu çözümlerle dijital yolculuğunuzu güçlendirin.</p>
