@@ -1,26 +1,64 @@
-@import "tailwindcss";
-
+/* CSS Variables Overrides for ESAPP Brand */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+    /* Main Colors */
+    --esapp-green-dark: #005B52;
+    /* Ana Renk 1 */
+    --esapp-green-light: #41A689;
+    /* Ana Renk 2 */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+    /* Theme Colors */
+    --primary-color: #005B52 !important;
+    /* Dark Theme Background / Text */
+    --secondary-color: #F1F3F3;
+    --bg-color: #F9FAFB;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    /* Accents */
+    --accent-color: #41A689 !important;
+    /* Primary Accent */
+    --esapp-orange: #FF9F43;
+    /* Secondary Accent / Stars */
+
+    /* Typography */
+    --default-font: 'Poppins', sans-serif !important;
+
+    /* Dark Mode Overrides (if applicable via class) */
+    --dark-bg: #005B52;
+    --dark-surface: #1F4B43;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif !important;
 }
+
+/* Updated Brand Button Styles */
+.btn-default {
+    background: var(--esapp-green-light) !important;
+    color: #fff !important;
+}
+
+.dark-section {
+    background-color: var(--esapp-green-dark) !important;
+}
+
+/* Typography Hierarchy */
+h1 {
+    font-weight: 700 !important;
+}
+
+/* Bold */
+h2 {
+    font-weight: 600 !important;
+}
+
+/* SemiBold */
+p {
+    font-weight: 400 !important;
+}
+
+/* Regular */
+.section-title h3 {
+    font-weight: 500 !important;
+    color: var(--esapp-green-light) !important;
+}
+
+/* Medium */
