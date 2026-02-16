@@ -63,7 +63,7 @@ export default function Home() {
               <div className="hero-content">
                 {/* Section Title Start */}
                 <div className="section-title">
-                  <h3 className="wow fadeInUp">ESAPP</h3>
+                  <h3 className="wow fadeInUp text-white">ESAPP</h3>
                   <h1 className="text-anime-style-3" data-cursor="-opaque">Elektronikspor Süper Uygulaması</h1>
                   <p className="wow fadeInUp" data-wow-delay="0.2s">E-spor ekosistemini tek bir erişilebilir süper uygulamada birleştiriyoruz.</p>
                 </div>
@@ -168,7 +168,7 @@ export default function Home() {
                       <img src="images/icon-headset.svg" alt="" />
                     </div>
                     <div className="customer-support-title">
-                      <h3>ESAPP<br />Topluluk Odaklı</h3>
+                      <h3 className="text-white" style={{ color: '#fff' }}>ESAPP<br />Topluluk Odaklı</h3>
                     </div>
                   </div>
                 </div>
@@ -291,7 +291,7 @@ export default function Home() {
           <div className="row section-row">
             <div className="col-lg-12">
               <div className="section-title section-title-center">
-                <h3 className="wow fadeInUp">ESAPP Ekosistemi</h3>
+                <h3 className="wow fadeInUp text-white">ESAPP Ekosistemi</h3>
                 <h2 className="text-anime-style-3" data-cursor="-opaque">Kapsamlı ve entegre dijital çözümler</h2>
               </div>
             </div>
